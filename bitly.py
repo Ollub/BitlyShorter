@@ -5,7 +5,6 @@ import argparse
 import requests
 from dotenv import load_dotenv
 
-load_dotenv()
 api_key = os.getenv("API_KEY")
 
 logger = logging.getLogger('bitly_helper')
@@ -83,6 +82,7 @@ def main(link=None, api_key=None):
     if long url provided prints short link
     '''
     logger.info('Program started')
+    load_dotenv()
     if not api_key:
         print('Please provide api key to main function')
         logger.error('api_key was not provided')
